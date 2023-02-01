@@ -1,8 +1,11 @@
 package longobardo.giovanni.HibernateRelazioni;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
-import jakarta.persistence.OneToOne;
+import jakarta.persistence.ManyToMany;
 
 @Entity
 public class Studente {
@@ -10,17 +13,17 @@ public class Studente {
 	@Id
 	private int id;
 	private String nome;
-	@OneToOne      // BISOGNA INSERRIE UNA ANNOTAZIONE PER DEFINIRE IL TIPO DI RELAZIONE
-	private Laptop laptop;
+	@ManyToMany    // BISOGNA INSERRIE UNA ANNOTAZIONE PER DEFINIRE IL TIPO DI RELAZIONE
+	private List<Laptop> laptop = new ArrayList<Laptop>();
 
 	public Studente() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public Laptop getLaptop() {
+	public List<Laptop> getLaptop() {
 		return laptop;
 	}
-	public void setLaptop(Laptop laptop) {
+	public void setLaptop(List<Laptop> laptop) {
 		this.laptop = laptop;
 	}
 	public int getId() {

@@ -21,9 +21,9 @@ public class App
     	Laptop l = new Laptop();
     	l.setId(1);
     	l.setNome("HP");
-    	l.setStudente(s);
+    	l.getStudente().add(s);
     	
-    	s.setLaptop(l);
+    	s.getLaptop().add(l);
     	
     	
     	Configuration conf = new Configuration().configure().addAnnotatedClass(Studente.class).addAnnotatedClass(Laptop.class);
