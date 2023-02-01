@@ -13,7 +13,7 @@ public class Studente {
 	@Id
 	private int id;
 	private String nome;
-	@ManyToMany    // BISOGNA INSERRIE UNA ANNOTAZIONE PER DEFINIRE IL TIPO DI RELAZIONE
+	@ManyToMany    // (fetch=FetchType.EAGER = imposta il fetch type di qyesto attributo in EAGER, cioe verrà sempre incluso nella SELECT anche se non richiesto dal codice
 	private List<Laptop> laptop = new ArrayList<Laptop>();
 
 	public Studente() {

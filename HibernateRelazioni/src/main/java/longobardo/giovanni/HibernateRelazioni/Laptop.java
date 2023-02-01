@@ -13,7 +13,7 @@ public class Laptop {
 	@Id
 	private int id;
 	private String nome;
-	@ManyToMany(mappedBy="laptop")
+	@ManyToMany(mappedBy="laptop") // BISOGNA INSERRIE UNA ANNOTAZIONE PER DEFINIRE IL TIPO DI RELAZIONE, mappedBy="variabile" vuol dire che ci pensa la classe con quella variabile a fare la tabella
 	private List<Studente> studente = new ArrayList<Studente>();
 	
 	public Laptop() {
